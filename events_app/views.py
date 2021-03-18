@@ -50,11 +50,14 @@ def register(request):
         goal_form = GoalForm(request.POST)
         if user_form.is_valid() and about_form.is_valid() and goal_form.is_valid():
             user = user_form.save()
+            user.save()
+            
+            print("User saved!")
             about_form.user = user
-            about = about_form.save()
-
+            about_form.save()
+            print("About Failed to save")
             goal_form.user = user
-            goal = goal_form.save()
+            goal_form.save()
             return render(request, "event_templates/registered.html")
         else:
             print(user_form.errors, about_form.errors, goal_form.errors)
@@ -67,10 +70,4 @@ def register(request):
     return render(request, "event_templates/register.html", context)
 
 
-
-def start_session(request, email):
-    if 'email' in request.session:
-        return profile(request)
-    request.session['email'] = email
-    request.session['login_time'] = str(datetime.now())
     

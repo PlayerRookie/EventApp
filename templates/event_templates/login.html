@@ -5,9 +5,12 @@
     Registeration Success
 {% endblock %}
 
+{% block header_link %}
+<link rel="stylesheet" href="{% static 'styles/register.css' %}">
+{% endblock %}
 
 {% block body_block %}
-<form method="POST" enctype="multipart/form-data" action="{% url 'events_app:login' %}">
+<form method="POST" class="blocks" enctype="multipart/form-data" action="{% url 'events_app:login' %}">
     {% csrf_token %}
     
     <ul>
