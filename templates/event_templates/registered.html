@@ -1,0 +1,11 @@
+{% extends 'event_templates/base.html' %}
+{% load static %}
+
+{% block header_title %}
+    Registeration Success
+{% endblock %}
+
+
+{% block body_block %}
+<h4>You have successfully regesitered! <a href="{% url 'events_app:login' %}">Login Here</a></h4>
+{% endblock %}

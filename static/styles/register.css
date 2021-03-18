@@ -1,0 +1,68 @@
+.container h1{
+    padding: 10px 0px;
+    margin: 0px;
+    text-align: center;
+    font-weight: 100;
+    color: rgb(150,150,150);
+    text-transform: uppercase;
+}
+
+
+.container .blocks{
+    text-align: center;
+    
+}
+
+.container .blocks ul{
+    display: inline-block;
+    list-style-type: none;
+    width: 40%;
+    margin: 10px 1%;
+    text-align: center;
+    vertical-align: top;
+}
+
+.container .blocks ul li:first-child{
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.container .blocks ul li h4{
+    font-weight: 100;
+    display: inline-block;
+    width: 27%;
+    text-align: left;
+}
+
+.container .blocks ul li textarea{
+    min-width: 80%;
+    max-width: 80%;
+    min-height: 200px;
+    max-height: 250px;
+    margin: 20px 0px;
+}
+
+.container .blocks ul li input{
+    width: 60%;
+}
+
+.container .blocks ul li select{
+    width: 60%;
+}
+
+.container .blocks input[type=submit]{
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+    font-size: 15px;
+    background-color: rgb(100,100,100);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    
+}
+.container .blocks input[type=submit]:hover{
+    background-color: black;
+    cursor: pointer;
+    
+}

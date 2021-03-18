@@ -1,0 +1,30 @@
+{% extends 'event_templates/base.html' %}
+{% load static %}
+
+{% block header_title %}
+Home
+{% endblock %}
+
+
+{% block body_block %}
+
+<div class="event_container">
+    <h1>Most Popular Events</h1>
+    {% for i in pop_event_count %}
+    <div>
+        <h2>Event Name</h2>
+        <h3>1302 Participating</h3>
+        <img src="{% static 'images/icon.png' %}">
+        <ul>
+            <li>Participating</li>
+            <li>Not this time</li>
+        </ul>
+    </div>
+    {% endfor %}
+
+
+</div>
+
+
+
+{% endblock %}

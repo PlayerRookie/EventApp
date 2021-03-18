@@ -1,0 +1,21 @@
+{% extends 'event_templates/base.html' %}
+{% load static %}
+
+{% block header_title %}
+    Registeration Success
+{% endblock %}
+
+
+{% block body_block %}
+<form method="POST" enctype="multipart/form-data" action="{% url 'events_app:login' %}">
+    {% csrf_token %}
+    
+    <ul>
+        <li><h4>Email</h4><input type="email" name="email"></li>
+        <li><h4>Password</h4><input type="password" name="password"></li>
+    </ul>
+    
+    <input type="submit" name="submit">
+
+</form>
+{% endblock %}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+
+    <head>
+        <title>Events - {% block header_title %}Title{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'styles/base.css' %}">
+        
+        {% block header_link %}
+        
+        {% endblock %}
+    </head>
+    
+    
+    <body>
+        <header>
+            <div>
+                <img src="{% static 'images/logo.png' %}">
+
+                <ul class="nav">
+                    <li><a href="{% url 'events_app:index' %}">Home</a></li>
+                    <li><a href="{% url 'events_app:about' %}">About</a></li>
+                    <li><a href="{% url 'events_app:events' %}">Events</a></li>
+                    <li><a href="{% url 'events_app:register'%}">Register</a></li>
+                    <li><input type="text" placeholder="Search.."></li>
+                </ul>
+            </div>
+            
+        </header>
+        
+        <body>
+            <div class="base">
+                <h1>Events</h1>
+                <h4>The official place to find and attend events for various reasons</h4>
+                <h4>A place to simply waste your time</h4>
+            </div>
+            
+            <div class="container">
+                {% block body_block %}
+                Body
+                {% endblock %}
+            </div>
+        </body>
+    
+        <footer>
+            <div>
+                <ul>
+                    <li>Address</li>
+                    <li>&copy;Events</li>
+                </ul>
+            </div>
+            
+            <ul class="nav">
+                <li><a href="{% url 'events_app:index' %}">Home</a></li>
+                <li><a href="{% url 'events_app:about' %}">About</a></li>
+                <li><a href="{% url 'events_app:events' %}">Events</a></li>
+                <li><a href="{% url 'events_app:register'%}">Register</a></li>
+                <li><input type="text" placeholder="Search.."></li>
+            </ul>
+        
+        </footer>
+    
+    
+    </body>
+
+
+</html>

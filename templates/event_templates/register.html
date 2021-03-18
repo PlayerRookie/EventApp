@@ -1,0 +1,111 @@
+{% extends 'event_templates/base.html' %}
+{% load static %}
+
+
+{% block header_title %}
+Register
+{% endblock %}
+
+{% block header_link %}
+<link rel="stylesheet" href="{% static 'styles/register.css' %}">
+{% endblock %}
+
+
+
+{% block body_block %}
+<h1>Register</h1>
+
+<form id="registerForm" class="blocks" action="{% url 'events_app:register' %}"  enctype="multipart/form-data" method="POST">
+
+    {% csrf_token %}
+    
+    <ul>
+        <li>General</li>
+        {% for field in user_form.visible_fields %}
+            <li><h4>{{field.label_tag}}</h4>{{field}}</li>
+        {% endfor %}
+    </ul>
+    
+    <ul>
+        <li>Goals</li>
+        {% for field in goal_form.visible_fields %}
+            {% if forloop.counter0 != 3 %}
+                <li><h4>{{field.label_tag}}</h4>{{field}}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    
+    <ul>
+        <li>About</li>
+        {% for field in about_form.visible_fields %}
+            <li><h4>{{field.label_tag}}</h4>{{field}}</li>
+        {% endfor %}
+    </ul>
+    
+    <ul>
+        <li>Biography</li>
+        <li>{{goal_form.visible_fields.3}}</li>
+    </ul>
+
+    
+    <input type="submit" name="submit" value="submit">
+</form>
+    <!----    <ul>
+            <li>General</li>
+            <li><h4>Full Name</h4> <input type="text" name="name"></li>
+            <li><h4>Email</h4> <input type="email" name="email"></li>
+            <li><h4>Repeat Email</h4> <input type="email" name="remail"></li>
+            <li><h4>Password</h4> <input type="password" name="password"></li>
+        </ul>
+        
+    <ul>
+        <li>Goals</li>
+        <li><h4>Goal 1</h4> <input type="text" name="goal_1"></li>
+        <li><h4>Goal 2</h4> <input type="text" name="goal_2"></li>
+        <li><h4>Goal 3</h4> <input type="text" name="goal_3"></li>
+    </ul>
+    
+    <ul>
+        <li>About</li>
+        <li><h4>Date Of Birth</h4> <input type="date" name="dob"></li>
+        <li>
+            <h4>Gender</h4> 
+            <select name="gender" form="registerForm">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+        </li>
+        
+        
+        <li>
+            <h4>Status</h4> 
+            <select name="status" form="registerForm">
+              <option value="single">Single</option>
+              <option value="relationship">In a Relationship</option>
+              <option value="married">Married</option>
+              <option value="widowed">Widowed</option>
+            </select>
+        </li>
+        <li>
+            <h4>Occupation</h4> 
+            <select name="occupation" form="registerForm">
+              <option value="student">Student</option>
+              <option value="invalid">invalid</option>
+              <option value="worker">Worker</option>
+              <option value="Entrepreneur">Entrepreneur</option>
+            </select>
+        </li>
+        <li><h4>Income-USD</h4> <input type="text" name="income"></li>
+    </ul>
+    
+    <ul>
+        <li>Biography</li>
+        <li><textarea></textarea></li>
+    </ul>
+    
+    <input type="submit" name="submit" value="Register">
+---->
+
+
+{% endblock %}

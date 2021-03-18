@@ -1,0 +1,16 @@
+{% extends 'event_templates/base.html' %}
+{% load static %}
+
+{% block header_title %}
+    Profile
+{% endblock %}
+
+
+{% block body_block %}
+<h4>You are now logged in, profile will be shown here.</h4>
+<ul>
+    {% for name,cont in user_info %}
+        <li><h4>{{name}}</h4>{{cont}}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
