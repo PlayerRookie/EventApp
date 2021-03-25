@@ -1,0 +1,14 @@
+.container ul{
+    list-style-type: none;
+}
+
+.container li h4{
+    display: inline-block;
+}
+
+.container li p{
+    display: inline-block;
+    margin-left: 10px;
+}
+
+

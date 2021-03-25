@@ -1,0 +1,19 @@
+{% extends 'event_templates/base.html' %}
+{% load static %}
+
+{% block header_title %}
+    Add Event
+{% endblock %}
+
+
+{% block body_block %}
+<h4>Create an event which anyone can opt in and attend!</h4>
+<ul>
+    <form id="addEvent" action="{% url 'events_app:add_event' %}"  enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        
+        {{form}}
+        <input type="submit" name="submit">
+    </form>
+</ul>
+{% endblock %}

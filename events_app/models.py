@@ -32,7 +32,14 @@ class AboutUser(models.Model):
     status = models.CharField(max_length=2, choices=STATUS_IDS)
     occupation = models.CharField(max_length=3,choices=OCCUPATION_IDS) 
     
+    def gender_from_id(identifier):
+        for gender in AboutUser.GENDER_IDS:
+            if gender[0] == identifier:
+                return gender[1]
+        return None
     
+AboutUser.gender_from_id = staticmethod(AboutUser.gender_from_id)
+  
 
 
 # The third model is UserGoals and contains all the goals
@@ -47,3 +54,29 @@ class UserGoals(models.Model):
     
     # biography
     bio = models.CharField(max_length=600)
+    
+    
+    
+"""
+- Each event has a name, id, image, location
+"""
+class Events(models.Model):
+    CATEGORIES = [('S', 'SPORTS'), ('F', "FUN"), ('O', "Other")]
+    LOCATIONS = [('SCOT', 'Scotland'), ('ENGL', "ENGLAND"), ('WALE', "WALES"), ('IREL', 'IRELAND')]
+    NAME_SIZE = 200
+    LOCATION_LENGTH = 4
+    
+    event_id = models.AutoField(primary_key=True)
+    category = models.CharField(max_length=3,choices=CATEGORIES, default=CATEGORIES[0]) 
+    name = models.CharField(max_length=NAME_SIZE)
+    image = models.FileField(upload_to = 'event_images')
+    location = models.CharField(max_length=LOCATION_LENGTH, choices=LOCATIONS)
+    creator = models.ForeignKey(EventUsers, on_delete=models.CASCADE) 
+    
+"""
+- User - Event
+"""
+
+class EventParticipation(models.Model):
+    user = models.ForeignKey(EventUsers, on_delete=models.CASCADE, primary_key=False) 
+    event = models.ForeignKey(Events, on_delete=models.CASCADE, primary_key=False) 

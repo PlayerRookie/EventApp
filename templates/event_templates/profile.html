@@ -5,12 +5,16 @@
     Profile
 {% endblock %}
 
+{% block header_link %}
+<link rel="stylesheet" href="{% static 'styles/profile.css' %}">
+{% endblock %}
+
 
 {% block body_block %}
 <h4>You are now logged in, profile will be shown here.</h4>
 <ul>
-    {% for name,cont in user_info %}
-        <li><h4>{{name}}</h4>{{cont}}</li>
+    {% for name,cont in General.items %}
+        <li><h4>{{name}}</h4> <p>{{cont}}</p></li>
     {% endfor %}
 </ul>
 {% endblock %}

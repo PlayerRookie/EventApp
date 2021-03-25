@@ -25,4 +25,4 @@ from events_app import views
 urlpatterns = [
     path('', include('events_app.urls')), # anything with / is managed by the the events app
     path('admin/', admin.site.urls),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] 

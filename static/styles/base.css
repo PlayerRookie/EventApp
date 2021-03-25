@@ -57,23 +57,8 @@ body div.base h4{
 
 }
 
-body .event_container{
-    text-align: center;
-}
-body .event_container h1{
-    text-align: center;
-    margin: 0px;
-    padding: 10px 0px;
-    font-weight: 100;
-}
-
-body .event_container div{
-    display: inline-block;
-    width: 30%;
-    margin: 1%;
-    border: 1px solid lightgray;
-}
 
 footer{
     border-top: 1px solid gray;
 }
+

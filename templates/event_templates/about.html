@@ -5,14 +5,20 @@
 About
 {% endblock %}
 
+{% block header_link %}
+<link rel="stylesheet" href="{% static 'styles/about.css' %}">
+{% endblock %}
+
 
 {% block body_block %}
-<h2>What is Events?</h2>
-<p>Events is an app which allows you to ...</p>
+<div class="about">
+    <h2>What is Events?</h2>
+    <p>Events is an app which allows you to create and explore events. </p>
 
-<h2>Who can use it?</h2>
-<p>Anyone who blabla</p>
+    <h2>Who can use it?</h2>
+    <p>Anyone who has an event which he/she wishes to share with other people to allow them to publically attend it.</p>
 
-<h2>How can i start?</h2>
-<button>Register</button>
+    <h2>How can i start?</h2>
+    <a href="{% url 'events_app:register' %}">Register</a>
+</div>
 {% endblock %}

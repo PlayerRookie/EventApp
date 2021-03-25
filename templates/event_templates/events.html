@@ -5,6 +5,10 @@
 Events
 {% endblock %}
 
+{% block header_link %}
+<link rel="stylesheet" href="{% static 'styles/event.css' %}">
+{% endblock %}
+
 
 {% block body_block %}
 
@@ -14,10 +18,16 @@ Events
 <div class="event_container">
     <h1>{{ cat }}</h1>
         {% for i in count %}
-        <div>
+        <div class="cont">
             <h2>Event Name</h2>
-            <h3>1302 Participating</h3>
-            <img src="{% static 'images/icon.png' %}">
+            <div class="image_cont">
+                
+                <img src="{% static 'images/icon.png' %}">
+                <div class="info">
+                    <h3>1302 Participating</h3>
+                    <h5>Created by name..</h5>
+                </div>
+            </div>
             <ul>
                 <li>Participating</li>
                 <li>Not this time</li>

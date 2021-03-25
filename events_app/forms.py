@@ -1,6 +1,6 @@
 from django import forms
 
-from events_app.models import EventUsers, AboutUser, UserGoals
+from events_app.models import EventUsers, AboutUser, UserGoals, Events
 
 
 class UserForm(forms.ModelForm):
@@ -28,3 +28,13 @@ class GoalForm(forms.ModelForm):
         widgets = {
             'bio': forms.Textarea()
         }
+
+        
+class EventCreationForm(forms.ModelForm):
+    class Meta:
+        model = Events
+        exclude = ('event_id', 'creator')
+        
+    
+        
+        

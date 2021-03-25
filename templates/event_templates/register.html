@@ -14,7 +14,7 @@ Register
 
 {% block body_block %}
 <h1>Register</h1>
-
+<p class="alreadyRegistered">Already registered? <a href="{% url 'events_app:login' %}">Login Here</a></p>
 <form id="registerForm" class="blocks" action="{% url 'events_app:register' %}"  enctype="multipart/form-data" method="POST">
 
     {% csrf_token %}
